@@ -1,18 +1,14 @@
 import React, { Component } from 'react';
 
 class SearchBar extends Component {
-  search = () => {
-    giphy.id([
-      'TJOLuHXwPZtSYuOsM9',
-      '13RW3MoCRy28Ja'
-    ], function (err, res) {
-      console.log(res);
-    });
+  input = (event) => {
+    this.props.searchFunction(event.target.value);
   }
+
   render() {
     return (
       <div>
-        <input type="text" className="form-search"/>
+        <input type="text" className="form-search" onChange={this.input} />
       </div>
     );
   }
